@@ -32,3 +32,21 @@ By using following commands we can get the output for respective code
 ```
 **5) Calculations of instructions**
 ![calculations](https://github.com/saidevharsha/vsdsquadron/blob/main/task1/5%20calculations%20of%20instructions.png?raw=true)
+
+By using the following commands we can get the assembly codes which are the above picture
+```
+  riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
+  ls -ltr sum1ton.o
+```
+Then the sum1ton.o file will be enable
+```
+  riscv64-unkown-elf-objdump -d sum1ton.o
+```
+The above command will give you bunch of assembly language code
+```
+  riscv64-unkown-elf-objdump -d sum1ton.o | less
+```
+The above command will help to reduce the assembly language code
+
+
+
