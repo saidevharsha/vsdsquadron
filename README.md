@@ -47,6 +47,18 @@ The above command will give you bunch of assembly language code
   riscv64-unkown-elf-objdump -d sum1ton.o | less
 ```
 The above command will help to reduce the assembly language code
+</details>
+
+<details>
+<summary><b> Task 2:</b> The task is to write a c program for Traffic Flow Controller and getting out using RISC-V instructions </summary>
+  <br>
+
+**Traffic Flow Controller**
+A simple Traffic flow controller controls the trafiic to reduce the congestions in this project iam using three lights red,yellow and green there will be a delay which will waste the time and it will be given to the each light and the delays for lights will be different and it will be fixed
+
+**simple c code for traffic flow controller**
+
+
 
 
 
