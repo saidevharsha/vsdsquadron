@@ -110,7 +110,34 @@ Then yellow light is enabled for 2 seconds,
 atlast green light is enabled for 8 seconds,
 this process iterative process the lights will be enabled according there delays
 
+**implementing traffic flow controller using RISCV**
 
+![commands](https://github.com/saidevharsha/vsdsquadron/blob/main/task2/riscv%20gcc%20commands.png?raw=true)
+
+```
+riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o tlc.o tlc.c
+ls -ltr tlc.o
+```
+These are the commands used to implement in RISCV
+
+**Assembly language code for traffic flow controller**
+
+![assembly](https://github.com/saidevharsha/vsdsquadron/blob/main/task2/large%20number%20of%20assembly%20codes.png?raw=true)
+
+```
+  riscv64-unknown-elf-objdump -d tlc.o
+```
+By using the above command we will get bunch of assembly language codes to reduce the assembly language code there is another command
+
+**reduced assembly language code**
+
+![reduced](https://github.com/saidevharsha/vsdsquadron/blob/main/task2/reduced%20assembly%20codes.png?raw=true)
+
+```
+  riscv64-unknown-elf-objdump -d tlc.o | less
+```
+This is reduced assembly language code for traffic flow controller
+</details>
 
 
 
