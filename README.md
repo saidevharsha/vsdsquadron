@@ -60,5 +60,46 @@ A simple Traffic flow controller controls the trafiic to reduce the congestions 
 
 ![c code](https://github.com/saidevharsha/vsdsquadron/blob/main/task2/c%20program%20for%20traffic%20light%20controller.png?raw=true)
 
+**traffic flow controller program**
+```
+#include <stdio.h>
+void redLight (int duration);
+void yellowLight (int duration);
+void greenLight (int duration);
+void delay(int seconds);
+int main() {
+int redDuration = 4;
+int yellowDuration = 2;
+int greenDuration = 8;
+while (1) {
+redLight(redDuration);
+yellowLight (yellowDuration);
+greenLight(greenDuration);
+}
+return 0;
+}
+void redLight (int duration) {
+printf("Red light on for %d seconds\n", duration); delay(duration);
+}
+void yellowLight (int duration) {
+printf("Yellow light on for %d seconds\n", duration); delay(duration);
+}
+void greenLight (int duration) {
+printf("Green light on for %d seconds\n", duration); delay(duration);
+}
+void delay(int seconds) {
+unsigned long count;
+for (int i=0; i< seconds; i++){
+}
+for(count=0; count<1000000000); count++);
+}
+```
+The numericals which are assigned to the the lights are the delays for example redlight=4 so the red light will be enabled for 4 seconds this applicable to the remaining lights
+
+**Output for the program**
+
+![output](https://github.com/saidevharsha/vsdsquadron/blob/main/task2/output%20for%20c%20program.png?raw=true)
+
+
 
 
