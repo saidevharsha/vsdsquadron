@@ -1,6 +1,6 @@
 # vsdsquadron
 <details>
-<summary><b> Task 1:</b> The task is to download the required software and to run a simple c code using RISC-V instructions </summary>
+<summary><b> Task 1:</b>  </summary>
   <br>
 
 **1) Installing virtual box**
@@ -50,7 +50,7 @@ The above command will help to reduce the assembly language code
 </details>
 
 <details>
-<summary><b> Task 2:</b> The task is to write a c program for Traffic Flow Controller and getting out using RISC-V instructions </summary>
+<summary><b> Task 2:</b>  </summary>
   <br>
 
 **Traffic Flow Controller**
