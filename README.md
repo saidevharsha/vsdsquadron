@@ -5,5 +5,5 @@
 
 **1) Installing virtual box**
 
-![VM Virtual Box](
+![VM VIRTUAL BOX](
 
