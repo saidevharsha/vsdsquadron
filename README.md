@@ -58,7 +58,7 @@ A simple Traffic flow controller controls the trafiic to reduce the congestions 
 
 **simple c code for traffic flow controller**
 
-
+![c code](https://github.com/saidevharsha/vsdsquadron/blob/main/task2/c%20program%20for%20traffic%20light%20controller.png?raw=true)
 
 
 
