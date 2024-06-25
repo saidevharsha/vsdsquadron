@@ -5,5 +5,7 @@
 
 **1) Installing virtual box**
 
-![VM VIRTUAL BOX](
+![VM VIRTUAL BOX](https://github.com/saidevharsha/vsdsquadron/blob/main/task1/1%20installing%20virtual%20%20box.png?raw=true)
+
+**2) installing leaf pad**
 
