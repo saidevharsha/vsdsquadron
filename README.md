@@ -1,6 +1,6 @@
 # vsdsquadron
 <details>
-<summary><b> Task 1:</b>  </summary>
+<summary><b> Task 1</b>  </summary>
   <br>
 
 **1) Installing virtual box**
@@ -50,7 +50,7 @@ The above command will help to reduce the assembly language code
 </details>
 
 <details>
-<summary><b> Task 2:</b>  </summary>
+<summary><b> Task 2</b>  </summary>
   <br>
 
 **Traffic Flow Controller**
