@@ -100,6 +100,18 @@ The numericals which are assigned to the the lights are the delays for example r
 
 ![output](https://github.com/saidevharsha/vsdsquadron/blob/main/task2/output%20for%20c%20program.png?raw=true)
 
+By using these commands we can get the output
+```
+  gcc filename.c
+  ./a.out
+```
+First red light is enabled for 4 seconds,
+Then yellow light is enabled for 2 seconds,
+atlast green light is enabled for 8 seconds,
+this process iterative process the lights will be enabled according there delays
+
+
+
 
 
 
