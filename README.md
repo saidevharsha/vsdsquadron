@@ -140,5 +140,7 @@ This is reduced assembly language code for traffic flow controller
 </details>
 
 
-
+<details>
+<summary><b> Task 3</b></summary>
+  <br>
 
