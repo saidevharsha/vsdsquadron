@@ -143,4 +143,7 @@ This is reduced assembly language code for traffic flow controller
 <details>
 <summary><b> Task 3</b></summary>
   <br>
+  This task is to perform spike simulation and verifying the 01 and 0fast instructions in RISC-V 
 
+ **verifying with -01 command**
+ 
