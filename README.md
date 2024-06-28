@@ -147,3 +147,71 @@ This is reduced assembly language code for traffic flow controller
 
  **verifying with -01 command**
  
+ ![-01command](https://github.com/saidevharsha/vsdsquadron/blob/main/task3/01%20instruction.png?raw=true)
+
+  This the command used to get the -01 instruction ``` riscv64-unknown-elf-gcc -o1 -mabi=lp64 -march=rv64i -o tlc.o tlc.c ```
+ ,  we will get the output by using ``` ./a.out``` 
+
+ ![spike-01](https://github.com/saidevharsha/vsdsquadron/blob/main/task3/01%20command.png?raw=true)
+
+By using the following command we can get the spike verification
+```
+spike pk tlc
+```
+  
+**Assembly language code for -01command**
+
+![assembly code](https://github.com/saidevharsha/vsdsquadron/blob/main/task3/assembly%20language%20code%20for%2001%20instruction.png?raw=true)
+
+ to get assembly language code for 01 instruction following command is used
+ ```
+  riscv64-unknown-elf-objdump -d tlc.o
+```
+by using above command we will get the large number of assembly language codes to reduce the no.of codes we will use the below code
+
+```
+  riscv64-unknown-elf-objdump -d tlc.o | less
+```
+
+**spike simulation for -01command**
+![spike-01](https://github.com/saidevharsha/vsdsquadron/blob/main/task3/spike%20simulation%20for%2001%20instruction.png?raw=true)
+
+In this we perform debugging by sing this instruction
+```
+spike pk tlc
+```
+"100b0" is the 1st address so we can start debugging from the 100b0 by using this command we can start simulation
+```
+until pc 0 100b0
+```
+for getting the register value ``` reg 0 a5 ```
+
+**verifying with -0fast command**
+
+This the command used to get the -0fast instruction ``` riscv64-unknown-elf-gcc -0fast -mabi=lp64 -march=rv64i -o tlc.o tlc.c ```
+ ,  we will get the output by using ``` ./a.out``` 
+
+ ![assembly 0fast](https://github.com/saidevharsha/vsdsquadron/blob/main/task3/assembly%20language%20code%20for%200fast%20instruction.png?raw=true)
+
+ we can get the assembly code for 0fast instruction by using the same commands which we used to get the -01 instruction's assembly language code
+
+ **Spike simulation for -0fast command**
+
+ ![spike 0fast](https://github.com/saidevharsha/vsdsquadron/blob/main/task3/spike%20simulation%20for%200fast%20instruction.png?raw=true)
+
+
+In this we perform debugging by sing this instruction
+```
+spike pk tlc
+```
+"100b0" is the 1st address so we can start debugging from the 100b0 by using this command we can start simulation
+```
+until pc 0 100b0
+```
+for getting the register value ``` reg 0 a5 ```
+
+</details>
+
+
+<details
+  
