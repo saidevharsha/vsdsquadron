@@ -358,6 +358,7 @@ SLL r15, r11, r2   | R-type          |  Shifts the value in rs1 left by the numb
 >* funct7: 0000000 
 
 *32 Bit Instruction code:*```0000000 00101 00010 110 01000 0110011```
+
 **5.XOR r8, r1, r4**
 >* Opcode: 0110011 
 >* rd : 01000 
@@ -412,3 +413,45 @@ SLL r15, r11, r2   | R-type          |  Shifts the value in rs1 left by the numb
 *32 Bit Instruction code:*```0000000 00010 01011 101 10000 0110011```
 
 **10.BNE r0, r1, 20**
+
+>* Opcode: 1100011 
+>* imm[12|10:5]: 0000001 
+>* rs2: 00001 
+>* rs1: 00000 
+>* funct3: 001 
+>* imm[4:1|11]: 01000
+
+*32 Bit Instruction code:*```0 000001 00001 00000 001 0100 0 1100011```
+
+**11.BEQ r0, r0, 15**
+
+>* Opcode: 1100011
+>* funct3: 000
+>* rs1: 00000 
+>* rs2: 00000 
+>* imm[11:0]: 15
+
+*32 Bit Instruction code:*```00000000 00001111 00000 00000 000 1100011```
+
+**12.LW r13, r11, 2**
+
+>* Opcode: 0000011 
+>* rd: 01101 
+>* funct3: 010 
+>* rs1: 01011 
+>* Immediate: 00010
+
+*32 Bit Instruction code:*```0000000 00010 01011 010 01101 0000011```
+
+**13.SLL r15, r11, r2**
+
+>* Opcode: 0110011 
+>* rd : 01111 
+>* funct3: 001 
+>* rs1 : 01011 
+>* rs2 : 00010 
+>* funct7: 0000000
+
+*32 Bit Instruction code:*```0000000 00010 01011 001 01111 0110011```
+
+</details>
