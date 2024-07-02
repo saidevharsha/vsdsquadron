@@ -228,4 +228,73 @@ There are some set of important instructions
 5. U - Upper Immediate
 6. J - Jump
 
-![instructionset]()
+![instructionset](https://github.com/saidevharsha/vsdsquadron/blob/main/task4/RISC-V%20INSTRUCTION%20%20SET.png?raw=true)
+
+**R-TYPE INSTRUCTION(Register)**
+* R-type instructions operate on data stored in registers, without relying on immediate values (numbers directly included in the instruction).
+* The first 7 bits (opcode) act as a fingerprint, identifying the general type of operation (like addition or subtraction).
+* Next 5 bits (rd index) specify the destination register, where the result of the operation will be stored.
+* Combined opcode and 3-bit funct3 field provide more details about the exact operation to be performed.
+* Finally, the last two registers (rs1 and rs2), identified by their indexes (bits 15-19 and 20-24 respectively), hold the data used in the operation.
+ ![rtype](https://velog.velcdn.com/images/taegon1998/post/fe0b327b-f8e3-4ff3-b77e-0c2ec99f06a8/image.jpg?raw==true)
+
+**I-TYPE INSTRUCTION(Immediate)**
+* I-type instructions are workhorses that combine register data with immediate values (small constant numbers included within the instruction itself). This eliminates the need to constantly access memory for these values, making them faster.
+* The key difference from R-type is the 12-bit immediate field occupying the upper portion of the instruction. This field holds the constant value directly usable in the operation.
+* The opcode remains in the same location but identifies operations suited for immediate values (like adding a register with a constant).
+* The rest of the structure, including destination register (rd) and source register (rs1) indexes, resembles R-type instructions.
+* In short, I-type instructions offer a more compact way to perform calculations involving both register data and fixed values.
+  
+![ITYPE](https://velog.velcdn.com/images/taegon1998/post/cb659e46-c7db-40b5-b3c0-44835e8fedd8/image.jpg?raw=true)
+
+**S-type Instruction(Store)**
+* S-type instructions are all about moving data out of registers and into memory. They act like couriers, delivering register values to their designated storage locations.
+* Unlike R-type and I-type, S-type instructions don't have a destination register (rd) because their focus is on storing, not manipulating data.
+* To pinpoint the memory address for storage, S-type instructions utilize a split immediate field. This field is divided into two parts:
+* Bits 11 to 5 hold the higher-order bits of the offset.
+* Bits 4 to 0 contain the lower-order bits of the offset.
+* This combined immediate value, added to the base address stored in a register (usually rs1), specifies the exact memory location where the data from the source 
+ register will be deposited.
+
+![stype](https://velog.velcdn.com/images/taegon1998/post/61bcec43-61f4-45ee-8e2f-1f9d51c80dba/image.jpg?raw=true)
+
+**B-TYPE INSTRUCTION(Branch)**
+* B-type instructions are the decision-makers of the RISC-V world. They control the flow of the program by performing conditional branches. Unlike their R, I, and S counterparts, B-type instructions focus on changing the execution path based on certain conditions.
+* B-type instructions are all about "if-then-else" scenarios. They compare the values in two registers (rs1 and rs2) using a funct3 field that specifies the comparison type (equal to, greater than, etc.).
+* There's no destination register (rd) because B-type instructions aren't concerned with storing results, just altering the program flow.
+* Similarly, funct7 is absent as B-type instructions deal with branching logic, not complex arithmetic operations.
+* It provides an offset value that determines how many instruction positions to jump (forward or backward) if the specified condition is met.
+* Think of B-type instructions as road signs. They evaluate conditions and, if met, adjust the program's course by a certain distance (the immediate offset) in 
+  memory.
+
+![btype](https://velog.velcdn.com/images/taegon1998/post/889b5adc-c152-4fa1-814a-85f10336e036/image.jpg?raw=true)
+
+**U-TYPE INSTRUCTION(Upper Immediate)**
+
+* U-type instructions are the express delivery service of RISC-V. They specialize in loading large immediate values (constants) directly into registers. Unlike I- 
+  type with its smaller immediate field, U-type offers a dedicated 20-bit space for these values.
+* U-type instructions are all about efficiency. They ditch most other fields, focusing solely on the essential elements:
+* A 20-bit immediate field carries the hefty data payload.
+* A destination register (rd) is specified, where this immediate value will be deposited.
+* You won't find funct3, rs1, rs2, or funct7 in U-type instructions. These fields are unnecessary for the simple task of loading immediate data.
+* Think of U-type instructions as pre-filled envelopes. They contain a large value (immediate) and a clear destination address (rd register), making data transfer 
+  swift and streamlined
+
+![utype](https://velog.velcdn.com/images/taegon1998/post/f5397f8a-e8c2-4b09-9967-d8889c7d6186/image.jpg?raw=true)
+
+**J-TYPE INSTRUCTION(Jump)**
+
+* While the RISC-V instruction set architecture (ISA) did have J-type instructions in earlier versions, it's important to note that  J-type instructions are no longer part of the base ISA as of RISC-V specification version 2.2. 
+* Previously, J-type instructions were used for unconditional jumps, similar to U-type instructions for loading immediates. They shared a similar format with just the opcode, destination register (rd), and a large immediate field for the jump target address.
+
+  Here's a quick comparison:
+
+    | Feature       | U-type Instruction | J-type Instruction (deprecated) |
+    |----------------|---------------------|---------------------------------|
+    | Purpose        | Load immediate      | Unconditional jump               |
+    | Key Field      | 20-bit immediate      | 20-bit jump target address        |
+    | Other Fields    | rd register (destination) | rd register (destination), opcode |
+
+* However, J-type instructions have been replaced by a combination of JAL (Jump and Link) instruction using the U-type format and setting rd to zero (x0). This simplifies the ISA and eliminates the need for a separate J-type format.
+
+
