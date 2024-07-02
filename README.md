@@ -297,4 +297,118 @@ There are some set of important instructions
 
 * However, J-type instructions have been replaced by a combination of JAL (Jump and Link) instruction using the U-type format and setting rd to zero (x0). This simplifies the ISA and eliminates the need for a separate J-type format.
 
+**given instruction sets and their type of instructions**
 
+**Instruction** | **Type**         |**Description**
+----------------|-----------------|-----------------------------------
+ADD r1, r2, r3     | R-type          | Adds the values in rs1 and rs2, stores the result in rd.
+SUB r3, r1, r2     | R-type          |  Subtracts the value in rs2 from rs1, stores the result in rd.
+AND r2, r1, r3     | R-type          |  Performs bitwise AND between rs1 and rs2, stores the result in rd.
+OR r8, r2, r5      | R-type          |  Performs bitwise OR between rs2 and rs5, stores the result in r8.
+XOR r8, r1, r4     | R-type          |  Performs bitwise XOR between rs1 and r4, stores the result in r8.
+SLT r10, r2, r4    | R-type          |  Sets r10 to 1 if rs2 is less than rs4, otherwise 0. (Set Less Than)
+ADDI r12, r3, 5   | I-type (immediate) |  Adds the immediate value (imm) to the value in rs1, stores the result in rd.
+SW r3, r1, 4       | S-type          |  Stores the value in rs2 at the memory address calculated by adding imm to the value in rs1.
+SRL r16, r11, r2   | R-type          |  Shifts the value in rs1 right by the number of bits specified in rs2, stores the result in r16. (Shift Right Logical)
+BNE r0, r1, 20     | B-type (branch)   |  Branches to the instruction at address `PC + imm` if the values in r0 and r1 are not equal. (Branch Not Equal)
+BEQ r0, r0, 15     | B-type (branch)   |  Branches to the instruction at address `PC + imm` if the value in r0 is equal to itself (always true). (Branch Equal)
+LW r13, r11, 2     | I-type (load)    |  Loads the value from the memory address calculated by adding imm to the value in rs1, stores the value in r13.
+SLL r15, r11, r2   | R-type          |  Shifts the value in rs1 left by the number of bits specified in rs2, stores the result in r15. (Shift Left Logical)
+
+
+**32 Bit Instruction code for each instruction**
+
+**1.ADD r1, r2, r3**
+>* Opcode: 0110011 
+>* rd : 00001 
+>* funct3: 000 
+>* rs1 : 00010 
+>* rs2 : 00011 
+>* funct7: 0000000
+
+*32 Bit Instruction code:* ```0000000 00011 00010 000 00001 0110011 ```
+
+**2.SUB r3, r1, r2**
+
+>* Opcode: 0110011 
+>* rd: 00011 
+>* funct3: 000 
+>* rs1 : 00001 
+>* rs2 : 00010 
+>* funct7: 0100000 
+
+*32 Bit Instruction code:* ```0100000 00010 00001 000 00011 0110011 ```
+
+**3.AND r2, r1, r3**
+>* Opcode: 0110011 
+>* rd : 00010 
+>* funct3: 111 
+>* rs1 : 00001 
+>* rs2 : 00011 
+>* funct7: 0000000
+
+*32 Bit Instruction code:*```0000000 00011 00001 111 00010 0110011  ```
+
+**4.OR r8, r2, r5**
+>* Opcode: 0110011 
+>* rd : 01000 
+>* funct3: 110 
+>* rs1 : 00010 
+>* rs2 : 00101 
+>* funct7: 0000000 
+
+*32 Bit Instruction code:*```0000000 00101 00010 110 01000 0110011```
+**5.XOR r8, r1, r4**
+>* Opcode: 0110011 
+>* rd : 01000 
+>* funct3: 100 
+>* rs1 : 00001 
+>* rs2 : 00100 
+>* funct7: 0000000 
+
+*32 Bit Instruction code:* ```0000000 00100 00001 100 01000 0110011 ```
+
+**6.SLT r10, r2, r4**
+
+>* Opcode: 0110011 
+>* rd : 01010 
+>* funct3: 010 
+>* rs1 : 00010 
+>* rs2 : 00100 
+>* funct7: 0000000 
+
+*32 Bit Instruction code:* ``` 0000000 00100 00010 010 01010 0110011```
+
+**7.ADDI r12, r3, 5**
+
+>* Opcode: 0010011 
+>* rd : 01100 
+>* funct3: 000 
+>* rs1 : 00011 
+>* imm: 000000000101
+
+*32 Bit Instruction code:* ```000000000101 00011 000 01100 0010011```
+
+**8.SW r3, r1, 4**
+
+>* Opcode: 0100011 
+>* imm[4:0]: 00100 
+>* rs1 : 00001 
+>* rs2 : 00011 
+>* funct3: 010 
+>* imm[11:5]: 0000000
+
+*32 Bit Instruction code:*```0000000 00011 00001 010 00100 0100011```
+
+**9.SRL r16, r11, r2**
+
+>* Opcode: 0110011 
+>* rd : 10000 
+>* funct3: 101 
+>* rs1 : 01011 
+>* rs2 : 00010 
+>* funct7: 0000000 
+
+*32 Bit Instruction code:*```0000000 00010 01011 101 10000 0110011```
+
+**10.BNE r0, r1, 20**
