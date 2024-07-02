@@ -213,5 +213,19 @@ for getting the register value ``` reg 0 a5 ```
 </details>
 
 
-<details
-  
+<details>
+  <summary><b> Task 4</b></summary>
+  <br>
+
+ **RISC-V ISA:** RISC-V (pronounced "risk-five") is an open-source instruction set architecture (ISA) for processors. Unlike most ISAs, RISC-V is royalty-free, meaning anyone can design and build RISC-V chips without paying licensing fees. It's based on the RISC (Reduced Instruction Set Computing) principle, where processors perform simple operations efficiently. RISC-V has a modular design with a base instruction set and optional extensions for specific tasks. This flexibility makes it suitable for a wide range of devices, from tiny embedded systems to powerful computers. RIS-V is gaining traction in the industry with companies designing RISC-V processors and software tools being developed to support it.
+There are some set of important instructions 
+
+**Instruction set**
+1. R - Register
+2. I - Immediate
+3. S - Store
+4. B - Branch
+5. U - Upper Immediate
+6. J - Jump
+
+![instructionset]()
