@@ -455,3 +455,91 @@ SLL r15, r11, r2   | R-type          |  Shifts the value in rs1 left by the numb
 *32 Bit Instruction code:*```0000000 00010 01011 001 01111 0110011```
 
 </details>
+
+
+<details>
+
+<summary><b> Task 5</b>  </summary>
+  <br>
+
+  **Steps to obtain waveform for the instructions**
+
+  *  ```iverilog``` tool is required to run the verilog code to install the iverilog tool these commands are used ```sudo apt-get update``` and ```sudo  
+  apt-get install iverilog``` 
+
+  *  ```gtkwave``` tool is required to get waveforms ```sudo apt-get install gtkwave``` this command is used to install the gtkwave tool
+
+   ![Screenshot (60)](https://github.com/saidevharsha/vsdsquadron/assets/173602422/14467bd2-6d49-4c95-b3f5-96b8be96383f)
+
+  * ```mkdir harsha``` to create directory
+
+  * ```touch harsha_rv32i.v``` and ```touch harsha_rv32i_tb.v``` these are the commands used to create files
+
+  * verilog code and testbench is refered from https://github.com/vinayrayapati/rv32i/
+
+  *  copy the code from the `iiitb_rv32i.v` and `iiitb_rv32i_tb.v` and paste  in `harsha_rv32i.v` and `harsha_rv32i_tb.v`
+  
+  *  To run the code and simulate use the command `iverilog -o harsha_rv32i harsha_rv32i.v harsha_rv32i_tb.v`
+  
+  * To get the output `./harsha_rv32i`
+  
+  * `gtkwave iiitb_rv32i.vcd` use this command to get waveform
+  
+    ![Screenshot (62)](https://github.com/saidevharsha/vsdsquadron/assets/173602422/24aeea39-6212-443d-9629-42abff7509f1)
+
+    **Instructions and it's waveforms**
+
+    **ADD r1,r2,r3**
+    ![ADD 1](https://github.com/saidevharsha/vsdsquadron/assets/173602422/df93c271-0c7a-40eb-b56d-bb51291bc876)
+
+    **SUB r3,r1,r2**
+     ![SUB 1](https://github.com/saidevharsha/vsdsquadron/assets/173602422/941520a3-bfc6-493c-a1a6-2722ca080308)
+
+    **AND r2,r1,r3**
+    ![AND 1](https://github.com/saidevharsha/vsdsquadron/assets/173602422/98331053-fdcf-4b1c-a297-1dc1eeec9fbb)
+
+    **OR r8,r2,r5**
+    ![OR 1](https://github.com/saidevharsha/vsdsquadron/assets/173602422/2d274efb-34a8-446a-874f-917d873712f0)
+
+    **XOR r8,r1,r4**
+    ![xor](https://github.com/saidevharsha/vsdsquadron/assets/173602422/f17cb96e-1fa2-4521-8c4c-6f79c29e3cf0)
+
+    **SLT r10,r2,r4**
+    ![SLT 1](https://github.com/saidevharsha/vsdsquadron/assets/173602422/421a1c05-8ccf-492c-92b7-d6d8685eb822)
+
+    **ADDI r122,r3,r5**
+    ![ADDI 1](https://github.com/saidevharsha/vsdsquadron/assets/173602422/f731eed6-7c04-4a3d-a1c9-6ffa6dc47dfc)
+
+    **SW r3,r1,r4**
+    ![SW 1](https://github.com/saidevharsha/vsdsquadron/assets/173602422/468b98fc-7cec-4787-9de5-cb4f74eb8300)
+
+    **SRL r16,r11,r2**
+    ![SRL 1](https://github.com/saidevharsha/vsdsquadron/assets/173602422/5d3ff2ea-491e-46d3-b3a3-7c4046339734)
+
+    **BNE r0,r1,20**
+    ![BNE 1](https://github.com/saidevharsha/vsdsquadron/assets/173602422/d5572b5f-b740-47c2-8128-b64253a58fb1)
+
+    **BEQ r0,r0,15**
+    ![BEQ 1](https://github.com/saidevharsha/vsdsquadron/assets/173602422/97870d87-2618-4069-82ef-f079c2f1ed27)
+
+    **SLL r15,r11,r2**
+    ![SLL 1](https://github.com/saidevharsha/vsdsquadron/assets/173602422/75f34f93-c023-4ee4-8a4c-a8e8b470c697)
+
+</details>
+
+
+<details>
+
+<summary><b> Task 6</b>  </summary>
+  <br>
+
+
+
+
+
+
+
+
+
+
+
